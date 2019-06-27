@@ -11,7 +11,11 @@ export class ServiciosService {
   constructor(public Http: HttpClient) { }
 
   loadPelisFromDate() {
-    return this.Http.get<IResultadoApi>("https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&api_key="
-     + environment.apiKey); 
+    return this.Http.get<IResultadoApi>('https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&api_key='
+     + environment.apiKey);
+  }
+  loadToFind(toSearch) {
+    return this.Http.get('https://api.themoviedb.org/3/search/company?api_key='
+    + environment.apiKey + '&query=' + toSearch + '&page=1');
   }
 }

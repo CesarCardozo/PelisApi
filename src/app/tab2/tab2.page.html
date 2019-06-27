@@ -1,9 +1,11 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Buscar
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            Buscar
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+    <ion-searchbar placeholder="Filtrar Peliculas" [(ngModel)]="searchMovie($event)"></ion-searchbar>
+</ion-content>

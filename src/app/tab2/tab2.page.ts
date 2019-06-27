@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServiciosService } from '../services/servicios.service';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +8,11 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  constructor(private _serviciosService: ServiciosService) { }
 
+  searchMovie(toFind) {
+    this._serviciosService.loadToFind('anime').subscribe(data => {
+      console.log(data);
+    });
+  }
 }
