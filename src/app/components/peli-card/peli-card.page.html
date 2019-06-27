@@ -1,9 +1,15 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>peli-card</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content>
+<ion-card>
+  <ion-card-header>
+    <ion-card-subtitle>sub
+      <div class="more">
+        <ion-button fill="clear" (click)="presentShareActionSheet()">
+          <ion-icon name="more"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-card-subtitle>
+    <ion-card-title (click)="displayInAppBrowser(new)">{{peli.title}}</ion-card-title>
+    <!--<ion-img [src]="new.urlToImage"></ion-img>-->
+  </ion-card-header>
+  <ion-card-content>descripcion
+  </ion-card-content>
+</ion-card>

@@ -2,10 +2,10 @@ export interface IResultadoApi {
     page: number,
     total_results: number,
     total_pages: number,
-    results: Iresults[];
+    results: IPeli[];
 }
 
-export interface Iresults {
+export interface IPeli {
     vote_count: number,
     id: number,
     video: boolean,
