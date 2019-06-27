@@ -16,7 +16,6 @@ export class PeliCardPage implements OnInit {
   constructor(public modalController: ModalController) { }
 
   ngOnInit() {
-    this.peli.poster_path = environment.apiImages + this.peli.poster_path;
   }
 
   async presentModal() {

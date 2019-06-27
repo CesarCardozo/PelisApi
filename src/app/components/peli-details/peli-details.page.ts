@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 
 @Component({
@@ -12,7 +12,8 @@ export class PeliDetailsPage implements OnInit {
   @Input() peli: string;
 
   constructor(public modalController: ModalController,
-    private storage: Storage) { }
+    private storage: Storage,
+    public toastController: ToastController) { }
 
   ngOnInit() {
   }
@@ -21,10 +22,14 @@ export class PeliDetailsPage implements OnInit {
     this.modalController.dismiss();
   }
 
-  addToFav(){
+  async addToFav(){
     this.storage.length().then((keysLength: Number) => {
       this.storage.set('peli-' + keysLength, this.peli);
     });
+    const toast = await this.toastController.create({
+      message: 'Your settings have been saved.',
+      duration: 2000
+    });
+    toast.present();
   }
-
 }
