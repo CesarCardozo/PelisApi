@@ -10,4 +10,10 @@
     <ion-input type="text" [(ngModel)]="filter">
         <ion-button (click)="searchMovie()">Buscar</ion-button>
     </ion-input>
+    <h2>Ultimos Estrenos</h2>
+    <ion-segment scrollable *ngIf="isSearch">
+        <ion-segment-button *ngFor="let peli of pelisReleased">
+            <app-peli-card [peli]="peli"></app-peli-card>
+        </ion-segment-button>
+    </ion-segment>
 </ion-content>
