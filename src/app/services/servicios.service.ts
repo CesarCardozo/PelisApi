@@ -11,6 +11,16 @@ export class ServiciosService {
   constructor(public Http: HttpClient) { }
 
   loadPelisFromDate() {
+    return this.Http.get<IResultadoApi>('https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2019-06-03&primary_release_date.lte=2019-06-09&api_key='
+     + environment.apiKey);
+  }
+
+  loadPelisMostPoPular() {
+    return this.Http.get<IResultadoApi>('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key='
+     + environment.apiKey);
+  }
+  
+  loadPelisColmbia() {
     return this.Http.get<IResultadoApi>('https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&api_key='
      + environment.apiKey);
   }

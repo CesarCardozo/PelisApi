@@ -1,15 +1,10 @@
 <ion-card>
   <ion-card-header>
-    <ion-card-subtitle>sub
-      <div class="more">
-        <ion-button fill="clear" (click)="presentShareActionSheet()">
-          <ion-icon name="more"></ion-icon>
-        </ion-button>
-      </div>
+    <ion-card-subtitle>Votos: {{peli.vote_average}} , popularidad:{{peli.popularity}}
     </ion-card-subtitle>
-    <ion-card-title (click)="displayInAppBrowser(new)">{{peli.title}}</ion-card-title>
-    <!--<ion-img [src]="new.urlToImage"></ion-img>-->
+    <ion-card-title>{{peli.title}}</ion-card-title>
+    <!--<ion-img [src]="peli.backdrop_path"></ion-img>-->
   </ion-card-header>
-  <ion-card-content>descripcion
+  <ion-card-content>{{peli.overview}}
   </ion-card-content>
 </ion-card>
