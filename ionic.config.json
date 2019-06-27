@@ -1,5 +1,7 @@
 {
   "name": "PelisApi",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
