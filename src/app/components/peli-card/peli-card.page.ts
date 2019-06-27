@@ -8,7 +8,7 @@ import { IPeli } from 'src/app/IResultadoApi';
 })
 export class PeliCardPage implements OnInit {
 
-  @Input() peli: IPeli;
+  @Input() peli:IPeli;
 
   constructor() { }
 

@@ -11,6 +11,7 @@ import { PeliCardPage } from './peli-card.page';
     FormsModule,
     IonicModule,
   ],
-  declarations: [PeliCardPage]
+  declarations: [PeliCardPage],
+  exports :[PeliCardPage]
 })
 export class PeliCardPageModule {}
