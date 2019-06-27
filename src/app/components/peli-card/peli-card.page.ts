@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IPeli } from 'src/app/IResultadoApi';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-peli-card',
@@ -13,6 +14,7 @@ export class PeliCardPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.peli.poster_path = environment.apiImages + this.peli.poster_path;
   }
 
 }

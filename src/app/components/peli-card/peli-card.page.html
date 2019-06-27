@@ -3,8 +3,8 @@
     <ion-card-subtitle>Votos: {{peli.vote_average}} , popularidad:{{peli.popularity}}
     </ion-card-subtitle>
     <ion-card-title>{{peli.title}}</ion-card-title>
-    <!--<ion-img [src]="peli.backdrop_path"></ion-img>-->
   </ion-card-header>
-  <ion-card-content>{{peli.overview}}
+  <ion-card-content>
+    <ion-img [src]="peli.poster_path" style="width: 360px; height: auto; margin:auto"></ion-img>
   </ion-card-content>
 </ion-card>
