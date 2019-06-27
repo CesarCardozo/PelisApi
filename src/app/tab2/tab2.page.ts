@@ -11,11 +11,9 @@ import { IPeli } from '../IResultadoApi';
 export class Tab2Page {
   filter = '';
   pelisReleased: IPeli[];
-  isSearch = false;
 
   constructor(private _serviciosService: ServiciosService) { }
   searchMovie() {
-    this.isSearch = true;
     this._serviciosService.loadToFind(this.filter).subscribe(data => {
       console.log(data);
       this.pelisReleased = data.results;
