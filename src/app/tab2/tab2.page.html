@@ -7,5 +7,7 @@
 </ion-header>
 
 <ion-content>
-    <ion-searchbar placeholder="Filtrar Peliculas" [(ngModel)]="searchMovie($event)"></ion-searchbar>
+    <ion-input type="text" [(ngModel)]="filter">
+        <ion-button (click)="searchMovie()">Buscar</ion-button>
+    </ion-input>
 </ion-content>
