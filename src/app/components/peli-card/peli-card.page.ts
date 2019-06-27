@@ -21,7 +21,10 @@ export class PeliCardPage implements OnInit {
 
   async presentModal() {
     const modal = await this.modalController.create({
-      component: PeliDetailsPage
+      component: PeliDetailsPage,
+      componentProps: {
+        'peli': this.peli,
+      }
     });
     return await modal.present();
   }

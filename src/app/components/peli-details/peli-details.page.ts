@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-peli-details',
@@ -8,13 +9,22 @@ import { ModalController } from '@ionic/angular';
 })
 export class PeliDetailsPage implements OnInit {
 
-  constructor(public modalController: ModalController) { }
+  @Input() peli: string;
+
+  constructor(public modalController: ModalController,
+    private storage: Storage) { }
 
   ngOnInit() {
   }
 
   salir(){
     this.modalController.dismiss();
+  }
+
+  addToFav(){
+    this.storage.length().then((keysLength: Number) => {
+      this.storage.set('peli-' + keysLength, this.peli);
+    });
   }
 
 }

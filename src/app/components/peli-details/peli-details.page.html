@@ -1,10 +1,27 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>peli.title</ion-title>
+    <ion-title>{{peli.title}}</ion-title>
     <ion-button fill="clear" slot="start" (click)="salir()">
-        <ion-icon name="arrow-back"></ion-icon>    </ion-button>
-
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-button fill="clear" slot="end" (click)="addToFav()">
+      <ion-icon name="heart"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-img [src]="peli.poster_path" style="width: 300px; height: auto; margin:auto"></ion-img>
+      <ion-label>Titulo original: {{peli.original_title}}</ion-label> <br>
+      <ion-label>voto: {{peli.vote_average}}, conteo de votos: {{peli.vote_count}}</ion-label><br>
+      <ion-label>Popularidad: {{peli.popularity}}</ion-label><br>
+      <ion-label>Idioma original: {{peli.original_language}}</ion-label><br>
+      <ion-label>Generos: </ion-label><br>
+      <ion-label *ngFor="let genero of peli.genre_ids">{{genero}}<br></ion-label>
+      <ion-label>Descripcion: {{peli.overview}}</ion-label><br>
+      <ion-label>Fecha de estreno: {{peli.release_date}}</ion-label><br>
+      <ion-button fill="clear" expand="full" (click)="salir()">Volver</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
