@@ -26,6 +26,6 @@ export class ServiciosService {
   }
   loadToFind(toSearch) {
     return this.Http.get('https://api.themoviedb.org/3/search/company?api_key='
-    + environment.apiKey + '&query=' + toSearch + '&page=1');
+    + environment.apiKey + '&query=' + toSearch);
   }
 }

@@ -7,11 +7,12 @@ import { ServiciosService } from '../services/servicios.service';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+  filter = '';
 
   constructor(private _serviciosService: ServiciosService) { }
 
-  searchMovie(toFind) {
-    this._serviciosService.loadToFind('anime').subscribe(data => {
+  searchMovie() {
+    this._serviciosService.loadToFind(this.filter).subscribe(data => {
       console.log(data);
     });
   }
