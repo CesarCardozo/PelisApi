@@ -27,7 +27,7 @@ export class PeliDetailsPage implements OnInit {
       this.storage.set('peli-' + keysLength, this.peli);
     });
     const toast = await this.toastController.create({
-      message: 'Your settings have been saved.',
+      message: 'Pelicula agregada a favoritos',
       duration: 2000
     });
     toast.present();
