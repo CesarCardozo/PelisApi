@@ -1,8 +1,12 @@
 <ion-card (click)="presentModal()">
     <ion-img [src]="'https://image.tmdb.org/t/p/original/'+peli.poster_path" style="width: 100%; height: auto; margin:auto"></ion-img>
     <ion-card-header>
-        <ion-card-subtitle>Votos: {{peli.vote_average}}</ion-card-subtitle>
-        <ion-card-subtitle>Popularidad:{{peli.popularity}}</ion-card-subtitle>
+        <ion-card-subtitle>Votos: {{peli.vote_average}}
+            <ion-icon name="thumbs-up"></ion-icon>
+        </ion-card-subtitle>
+        <ion-card-subtitle>Popularidad:{{peli.popularity}}
+            <ion-icon name="star-half"></ion-icon>
+        </ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
         <ion-card-title>{{peli.title}}</ion-card-title>
