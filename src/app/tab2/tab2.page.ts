@@ -10,12 +10,16 @@ import { IPeli } from '../IResultadoApi';
 })
 export class Tab2Page {
   filter = '';
-  pelisReleased: IPeli[];
+  pelisReleased: IPeli[] = [];
+  sizePelis = 0;
+  isSearch = false;
 
-  constructor(private _serviciosService: ServiciosService) { }
+  constructor(private servicio: ServiciosService) { }
   searchMovie() {
-    this._serviciosService.loadToFind(this.filter).subscribe(data => {
+    this.servicio.loadToFind(this.filter).subscribe(data => {
       console.log(data);
+      this.isSearch = true;
+      this.sizePelis = data.results.length;
       this.pelisReleased = data.results;
     });
   }

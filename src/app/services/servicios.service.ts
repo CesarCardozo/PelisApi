@@ -11,21 +11,21 @@ export class ServiciosService {
   constructor(public Http: HttpClient) { }
 
   loadPelisFromDate() {
-    return this.Http.get<IResultadoApi>('https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2019-06-03&primary_release_date.lte=2019-06-09&api_key='
+    return this.Http.get<IResultadoApi>('https://api.themoviedb.org/3/discover/movie?' +
+    'primary_release_date.gte=2019-06-03&primary_release_date.lte=2019-06-09&api_key='
      + environment.apiKey);
   }
-
   loadPelisMostPoPular() {
     return this.Http.get<IResultadoApi>('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key='
      + environment.apiKey);
   }
-  
   loadPelisColmbia() {
-    return this.Http.get<IResultadoApi>('https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&api_key='
+    return this.Http.get<IResultadoApi>('https://api.themoviedb.org/3/discover/movie?primary_' +
+    'release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&api_key='
      + environment.apiKey);
   }
   loadToFind(toSearch) {
-    return this.Http.get<IResultadoApi>('https://api.themoviedb.org/3/search/movie?api_key='
-    + environment.apiKey + '&language=es-Es&query=' + toSearch);
+    return this.Http.get<IResultadoApi>('https://api.themoviedb.org/3/search/movie?query=' + toSearch
+    + '&language=es-ES&api_key=' + environment.apiKey);
   }
 }

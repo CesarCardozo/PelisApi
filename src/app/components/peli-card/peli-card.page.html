@@ -1,10 +1,10 @@
 <ion-card (click)="presentModal()">
-  <ion-card-header>
-    <ion-card-subtitle>Votos: {{peli.vote_average}} , popularidad:{{peli.popularity}}
-    </ion-card-subtitle>
-    <ion-card-title>{{peli.title}}</ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
-    <ion-img [src]="'https://image.tmdb.org/t/p/original/'+peli.poster_path" style="width: 300px; height: auto; margin:auto"></ion-img>
-  </ion-card-content>
+    <ion-card-header>
+        <ion-card-subtitle>Votos: {{peli.vote_average}} , popularidad:{{peli.popularity}}
+        </ion-card-subtitle>
+        <ion-card-title>{{peli.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-img [src]="'https://image.tmdb.org/t/p/original/'+peli.poster_path" style="width: 15em; height: auto; margin:auto"></ion-img>
+    </ion-card-content>
 </ion-card>
