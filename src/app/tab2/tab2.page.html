@@ -18,7 +18,7 @@
     <ion-grid>
         <h2 *ngIf="isSearch">Cerca de {{sizePelis}} resultados para {{filter}}</h2>
         <ion-row>
-            <ion-col size="auto" *ngFor="let peli of pelisReleased">
+            <ion-col size-xs="10" offset-xs="2" size-sm="6" size-md="4" size-lg="3" *ngFor="let peli of pelisReleased">
                 <app-peli-card [peli]="peli"></app-peli-card>
             </ion-col>
         </ion-row>
