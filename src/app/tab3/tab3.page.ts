@@ -30,7 +30,7 @@ export class Tab3Page implements OnInit {
     this.pelis=[];
     this.storage.length().then((keysLength: Number) => {
       for(let i=0; i<keysLength;i++){
-        this.storage.get('new-'+i).then((val:IPeli) => {
+        this.storage.get('peli-'+i).then((val:IPeli) => {
           this.pelis[this.pelis.length]=val;
         }).catch((error) => {
           console.log(error);
