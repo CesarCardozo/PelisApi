@@ -1,32 +1,30 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Peliculas
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            Peliculas
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
     <h2>Ultimos Estrenos</h2>
     <ion-segment scrollable>
-      <ion-segment-button *ngFor="let peli of pelisReleased">
-        <app-peli-card [peli]="peli"></app-peli-card>
-      </ion-segment-button>
+        <ion-segment-button *ngFor="let peli of pelisReleased">
+            <app-peli-card [peli]="peli"></app-peli-card>
+        </ion-segment-button>
     </ion-segment>
 
     <h2>Mas Populares</h2>
-  <ion-segment scrollable>
-    <ion-segment-button *ngFor="let peli of pelisMostPopular">
-      <app-peli-card [peli]="peli"></app-peli-card>
-    </ion-segment-button>
-  </ion-segment>
+    <ion-segment scrollable>
+        <ion-segment-button *ngFor="let peli of pelisMostPopular">
+            <app-peli-card [peli]="peli"></app-peli-card>
+        </ion-segment-button>
+    </ion-segment>
 
-  <h2>Mas Populares en colombia</h2>
-  <ion-segment scrollable>
-    <ion-segment-button *ngFor="let peli of pelisColombia">
-      <app-peli-card [peli]="peli"></app-peli-card>
-    </ion-segment-button>
-  </ion-segment>
-
+    <h2>Mas Populares en colombia</h2>
+    <ion-segment scrollable>
+        <ion-segment-button *ngFor="let peli of pelisColombia">
+            <app-peli-card [peli]="peli"></app-peli-card>
+        </ion-segment-button>
+    </ion-segment>
 </ion-content>

@@ -16,6 +16,7 @@ export class Tab2Page {
 
   constructor(private servicio: ServiciosService) { }
   searchMovie() {
+    console.log('entra');
     this.servicio.loadToFind(this.filter).subscribe(data => {
       console.log(data);
       this.isSearch = true;

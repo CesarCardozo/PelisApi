@@ -10,14 +10,15 @@
     <ion-item>
         <ion-label position="floating">Nombre de la película: </ion-label>
         <ion-input [(ngModel)]="filter"></ion-input>
-        <ion-button color="success" slot="end" shape="round" (click)="searchMovie()">Buscar
+        <ion-button color="success" slot="end" shape="round" (click)="searchMovie()" (keyup.enter)="searchMovie()" style="height: 2rem">
+            Buscar
             <ion-icon name="search"></ion-icon>
         </ion-button>
     </ion-item>
     <ion-grid>
         <h2 *ngIf="isSearch">Cerca de {{sizePelis}} resultados para {{filter}}</h2>
         <ion-row>
-            <ion-col size-xs="12" size-sm="6" size-md="4" size-lg="3" *ngFor="let peli of pelisReleased">
+            <ion-col size="auto" *ngFor="let peli of pelisReleased">
                 <app-peli-card [peli]="peli"></app-peli-card>
             </ion-col>
         </ion-row>
